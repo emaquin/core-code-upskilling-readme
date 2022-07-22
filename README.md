@@ -77,3 +77,18 @@ const arr = [14, 58, 20, 77, 66, 82, 42, 67, 42, 4]
             console.log(min)
 
 ```
+## Odd or Even
+
+```
+const arr = [5, 1, 8, 4, 6, 9];
+            const assignSum = (arr = []) => {
+                const sum = arr.reduce((acc, val) => {
+                    return acc + val;
+                }, 0);
+                const isSumEven = sum % 2 === 0;
+                return isSumEven ? 'even' : 'odd';
+            };
+            console.log(assignSum(arr));
+
+```
+
