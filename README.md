@@ -91,4 +91,26 @@ const arr = [5, 1, 8, 4, 6, 9];
             console.log(assignSum(arr));
 
 ```
+# Week 2
 
+## Is Palindrome?
+
+Challenge: A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward. This includes capital letters, punctuation, and word dividers.
+
+Implement a function that checks if something is a palindrome. If the input is a number, convert it to string first.
+
+Examples(Input ==> Output)
+"anna"   ==> true
+
+For this solution I used a Regular expression to match character combinations in the strings and several built-in methods.
+
+```
+function palindrome(str) {
+   var re = /[^A-Za-z0-9]/g;
+   var lowRegStr = str.toLowerCase().replace(re, '');
+   var reverseStr = lowRegStr.split('').reverse().join('');
+   return reverseStr === lowRegStr;
+}
+        
+palindrome("Never odd or even");
+```
