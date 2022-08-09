@@ -236,3 +236,54 @@ class WishlistForm extends React.Component {
 };
 
 ```
+## Week 3
+
+# (Monday) Build Search Filter In React
+
+React code to build a simple search filter functionality to display a filtered list based on the search query entered by the user.
+
+```
+import React, { useState } from 'react';
+
+function Filter() {
+
+    const list = [
+        'Banana',
+        'Apple',
+        'Orange',
+        'Mango',
+        'Watermelon',
+    ];
+
+    const [filterList, setFilterList] = useState(list);
+
+    const handleChangeSearch = (e) => {
+        if (e.target.value === '') {
+            setFilterList(list);
+        }
+    
+
+        const filteredValues = list.filter(
+            (item) =>
+                item.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+        );
+
+        setFilterList(filteredValues);
+    };
+    
+    return (
+      
+        <form>
+          <label>
+            Search: <input type="text" onChange={handleChangeSearch} />
+          </label>
+            {filterList && filterList.map((item, index) => (
+                <div key={`${item}-${index}`}>{item}</div>))}
+        </form>
+      
+    );
+}
+
+export default Filter;
+
+```
