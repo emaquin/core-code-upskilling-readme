@@ -236,6 +236,38 @@ class WishlistForm extends React.Component {
 };
 
 ```
+# Extra - Easter Eggs List
+
+Learn about nesting and listing React components.
+
+The component EggList will set a prop called eggs which is an array of your favourite easter eggs e.g. "Lindt".
+Loop through the props.eggs to output a unorder list of Easter eggs.
+Each list item should be a component called EasterEgg with a prop name, to render the name in a li tag.
+Each EasterEgg will need a key prop with a unique id. Use the index of the array for now.
+
+```
+import React from 'react';
+
+export const EggList = (props) => {
+
+  const eggs = ['Lindt', 'Cadbury', 'Milka', 'Maltesers'];
+  return (
+      
+        <ul>
+          {eggs.map((egg, index)=><EasterEgg key={index} name={egg}/>)}
+        </ul>
+       
+   );   
+ 
+};
+
+export const EasterEgg = (props) => {
+  return <li>{props.name}</li>;
+    
+};
+
+```
+
 ## Week 3
 
 # (Monday) Build Search Filter In React
